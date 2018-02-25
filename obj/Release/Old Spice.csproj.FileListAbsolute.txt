@@ -1,0 +1,41 @@
+C:\Users\Takeru\Documents\Visual Studio 2012\Projects\Old Spice\Old Spice\bin\Release\Old Spice.exe
+C:\Users\Takeru\Documents\Visual Studio 2012\Projects\Old Spice\Old Spice\bin\Release\Old Spice.pdb
+C:\Users\Takeru\Documents\Visual Studio 2012\Projects\Old Spice\Old Spice\obj\Release\OldSpice.Abert.resources
+C:\Users\Takeru\Documents\Visual Studio 2012\Projects\Old Spice\Old Spice\obj\Release\OldSpice.OSL.resources
+C:\Users\Takeru\Documents\Visual Studio 2012\Projects\Old Spice\Old Spice\obj\Release\OldSpice.Properties.Resources.resources
+C:\Users\Takeru\Documents\Visual Studio 2012\Projects\Old Spice\Old Spice\obj\Release\Old Spice.csproj.GenerateResource.Cache
+C:\Users\Takeru\Documents\Visual Studio 2012\Projects\Old Spice\Old Spice\obj\Release\Old Spice.exe
+C:\Users\Takeru\Documents\Visual Studio 2012\Projects\Old Spice\Old Spice\obj\Release\Old Spice.pdb
+C:\Users\Takeru\Documents\Visual Studio 2012\Projects\Old Spice\Old Spice\obj\Release\Old Spice.csprojResolveAssemblyReference.cache
+C:\Users\Takeru\Documents\Visual Studio 2012\Projects\Old Spice\Old Spice\bin\Release\Old Spice.exe.config
+C:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\bin\Release\Old Spice.exe.config
+C:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\obj\Release\Old Spice.exe
+C:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\obj\Release\Old Spice.pdb
+C:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\bin\Release\Old Spice.exe
+C:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\bin\Release\Old Spice.pdb
+C:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\obj\Release\Old Spice.csprojResolveAssemblyReference.cache
+C:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\obj\Release\OldSpice.Abert.resources
+C:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\obj\Release\OldSpice.OSL.resources
+C:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\obj\Release\OldSpice.Properties.Resources.resources
+C:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\obj\Release\Old Spice.csproj.GenerateResource.Cache
+D:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\bin\Release\Old Spice.exe.config
+D:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\obj\Release\Old Spice.exe
+D:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\obj\Release\Old Spice.pdb
+D:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\bin\Release\Old Spice.exe
+D:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\bin\Release\Old Spice.pdb
+D:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\obj\Release\Old Spice.csprojResolveAssemblyReference.cache
+D:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\obj\Release\OldSpice.Abert.resources
+D:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\obj\Release\OldSpice.OSL.resources
+D:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\obj\Release\OldSpice.Properties.Resources.resources
+D:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\obj\Release\Old Spice.csproj.GenerateResource.Cache
+D:\Users\Dylan\Google Drive\Rise Of The Mercenaries\Old Spice\Old Spice\Old Spice\obj\Release\OldSpice.D2KPlus.resources
+D:\Users\Dylan\Documents\MEGAsync\Old Spice\Old Spice\bin\Release\Old Spice.exe.config
+D:\Users\Dylan\Documents\MEGAsync\Old Spice\Old Spice\obj\Release\Old Spice.exe
+D:\Users\Dylan\Documents\MEGAsync\Old Spice\Old Spice\obj\Release\Old Spice.pdb
+D:\Users\Dylan\Documents\MEGAsync\Old Spice\Old Spice\bin\Release\Old Spice.exe
+D:\Users\Dylan\Documents\MEGAsync\Old Spice\Old Spice\bin\Release\Old Spice.pdb
+D:\Users\Dylan\Documents\MEGAsync\Old Spice\Old Spice\obj\Release\Old Spice.csprojResolveAssemblyReference.cache
+D:\Users\Dylan\Documents\MEGAsync\Old Spice\Old Spice\obj\Release\OldSpice.Abert.resources
+D:\Users\Dylan\Documents\MEGAsync\Old Spice\Old Spice\obj\Release\OldSpice.OSL.resources
+D:\Users\Dylan\Documents\MEGAsync\Old Spice\Old Spice\obj\Release\OldSpice.Properties.Resources.resources
+D:\Users\Dylan\Documents\MEGAsync\Old Spice\Old Spice\obj\Release\Old Spice.csproj.GenerateResource.Cache
