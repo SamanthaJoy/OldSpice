@@ -1,6 +1,6 @@
 ﻿//Code by Takeru Lunsford (Steam: TakeruL | Skype: TakeruL)
 //
-//Source not to be released publicly.
+//Source is now open source, licensed under the GNU Public License. Check LICENSE
 //
 //I know it's a major clusterfuck, but meh, whatever get's the job done, right?
 //Also, I tried accounting for a lot of stuff, but this was a rushed job.
