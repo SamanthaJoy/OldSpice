@@ -47,7 +47,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(247, 109);
             this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "-Project Lead\r\n-Project Planner\r\n-Designer";
+            this.textBox1.Text = "-Project Lead\r\n-Project Planner\r\n-Designer\r\n-Primary developer of Old Spice";
             // 
             // textBox2
             // 
