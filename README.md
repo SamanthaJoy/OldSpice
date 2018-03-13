@@ -6,6 +6,6 @@ Current tasks:
 
 [✔] Create Toolkit form
 
-[ ] RSS feed reader to replace web browser control
+[✕] RSS feed reader to replace web browser control
 
-[ ] Create new updater functions
+[✕] Create new updater functions
