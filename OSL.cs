@@ -1,28 +1,16 @@
-﻿//Code by Takeru Lunsford (Steam: TakeruL | Skype: TakeruL)
-//
-//Source is now open source, licensed under the GNU Public License. Check LICENSE
-//
-//I know it's a major clusterfuck, but meh, whatever get's the job done, right?
-//Also, I tried accounting for a lot of stuff, but this was a rushed job.
-
+﻿//Code by Samantha Joy (https://github.com/SamanthaJoy)
 //Additional code added by Gruntlord6
+//Licensed under GPLv3, check LICENSE
 
 using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Windows.Forms;
-using System.Threading;
-using System.Collections;
-using System.Data.OleDb;
-using System.Configuration;
+using System.Xml;
+using System.ServiceModel.Syndication;
 
 
 namespace OldSpice
@@ -58,6 +46,31 @@ namespace OldSpice
         public String procArch;
         private void OSL_Load(object sender, EventArgs e)
         {
+            string url = "https://gruntmods.com/category/dune-2000-gruntmods-edition/duneupdates/feed/";
+            using (XmlReader reader = XmlReader.Create(url))
+            {
+                SyndicationFeed feed = SyndicationFeed.Load(reader);
+
+                RSSViewer.ColumnCount = 2;
+                RSSViewer.Columns[0].Name = "Title";
+                RSSViewer.Columns[1].Name = "Summary";
+
+                DataGridViewColumn column1 = RSSViewer.Columns[0];
+                column1.Width = 200;
+
+                DataGridViewColumn column2 = RSSViewer.Columns[1];
+                column2.Width = 750;
+
+                Console.WriteLine(feed.Title.Text);
+                Console.WriteLine(feed.Links[0].Uri);
+                foreach (SyndicationItem item in feed.Items)
+                {
+                    //RSSViewer.Items.Add(item.Title.Text);
+                    RSSViewer.Rows.Add(item.Title.Text, item.Summary.Text);
+
+                }
+            }
+
             procArch = System.Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE");
             //Grabs version of local installation
             string localVersionString = getRegistryValue("DisplayVersion");
@@ -154,6 +167,7 @@ namespace OldSpice
             About abert = new About();
             abert.Show();
         }
+
         public string getRegistryValue(string value)
         {
             string localVersion;
@@ -166,6 +180,7 @@ namespace OldSpice
             return localVersion;
 
         }
+
         private void Completed(object sender, AsyncCompletedEventArgs e)
         {
             //resets stopwatch once download finishes
@@ -198,6 +213,7 @@ namespace OldSpice
             var startInfo = new ProcessStartInfo("explorer.exe", "http://gruntmods.com");
             Process.Start(startInfo);
         }
+
         public bool IsProcessOpen(string name)
         {
             //here we're going to get a list of all running processes on the computer
@@ -222,6 +238,7 @@ namespace OldSpice
             //otherwise we return a false
             return false;
         }
+
         private void ProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             try
@@ -256,7 +273,6 @@ namespace OldSpice
             ProcessStart(multiPlayer);
         }
 
-
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //To open a link in a program thats running with elevated privileges, it needs to be launched through explorer for some stupid reason
@@ -280,16 +296,6 @@ namespace OldSpice
         {
             string MissionLauncher = getRegistryValue("MissionLauncher");
             Process.Start(MissionLauncher);
-        }
-
-        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

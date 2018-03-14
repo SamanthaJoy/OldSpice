@@ -49,8 +49,10 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.kUpdatedLabel = new System.Windows.Forms.Label();
+            this.RSSViewer = new System.Windows.Forms.DataGridView();
             linkLabel1 = new System.Windows.Forms.LinkLabel();
             linkLabel3 = new System.Windows.Forms.LinkLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.RSSViewer)).BeginInit();
             this.SuspendLayout();
             // 
             // linkLabel1
@@ -271,7 +273,15 @@
             this.kUpdatedLabel.TabIndex = 24;
             this.kUpdatedLabel.Text = "Version up to date";
             this.kUpdatedLabel.Visible = false;
-            this.kUpdatedLabel.Click += new System.EventHandler(this.label2_Click);
+            //this.kUpdatedLabel.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // RSSViewer
+            // 
+            this.RSSViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.RSSViewer.Location = new System.Drawing.Point(116, 56);
+            this.RSSViewer.Name = "RSSViewer";
+            this.RSSViewer.Size = new System.Drawing.Size(810, 295);
+            this.RSSViewer.TabIndex = 25;
             // 
             // OSL
             // 
@@ -279,6 +289,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1063, 618);
+            this.Controls.Add(this.RSSViewer);
             this.Controls.Add(this.kUpdatedLabel);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -307,6 +318,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Old Spice (Dune 2000 Launcher/Updater)";
             this.Load += new System.EventHandler(this.OSL_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.RSSViewer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,6 +343,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label kUpdatedLabel;
+        private System.Windows.Forms.DataGridView RSSViewer;
     }
 }
 
