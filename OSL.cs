@@ -52,23 +52,25 @@ namespace OldSpice
                 SyndicationFeed feed = SyndicationFeed.Load(reader);
 
                 RSSViewer.ColumnCount = 2;
-                RSSViewer.Columns[0].Name = "Title";
-                RSSViewer.Columns[1].Name = "Summary";
+
+                RSSViewer.Columns[1].Visible = false;
 
                 DataGridViewColumn column1 = RSSViewer.Columns[0];
-                column1.Width = 200;
+                column1.Width = RSSViewer.Width - 20;
 
-                DataGridViewColumn column2 = RSSViewer.Columns[1];
-                column2.Width = 750;
+                //DataGridViewColumn column2 = RSSViewer.Columns[1];
+                //column2.Width = 750;
 
                 Console.WriteLine(feed.Title.Text);
                 Console.WriteLine(feed.Links[0].Uri);
                 foreach (SyndicationItem item in feed.Items)
                 {
-                    //RSSViewer.Items.Add(item.Title.Text);
-                    RSSViewer.Rows.Add(item.Title.Text, item.Summary.Text);
-
+                    //RSSViewer.Rows.Add(item.Title.Text, item.Summary.Text);
+                    RSSViewer.Rows.Add(item.Title.Text, item.Links[0].Uri);
+                    RSSViewer.Rows.Add(item.Summary.Text, item.Links[0].Uri);
+                    RSSViewer.Rows.Add("");
                 }
+                RSSViewer.Rows[0].Selected = false;
             }
 
             procArch = System.Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE");
@@ -296,6 +298,13 @@ namespace OldSpice
         {
             string MissionLauncher = getRegistryValue("MissionLauncher");
             Process.Start(MissionLauncher);
+        }
+
+        private void RSSViewer_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var rssurl = RSSViewer.CurrentRow.Cells[1].Value.ToString();
+            var launchRSSUrl = new ProcessStartInfo("explorer.exe", rssurl);
+            Process.Start(launchRSSUrl);
         }
     }
 }

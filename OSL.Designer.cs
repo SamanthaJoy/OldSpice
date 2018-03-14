@@ -273,15 +273,24 @@
             this.kUpdatedLabel.TabIndex = 24;
             this.kUpdatedLabel.Text = "Version up to date";
             this.kUpdatedLabel.Visible = false;
-            //this.kUpdatedLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // RSSViewer
             // 
+            this.RSSViewer.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.RSSViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.RSSViewer.Location = new System.Drawing.Point(116, 56);
+            this.RSSViewer.ColumnHeadersVisible = false;
+            this.RSSViewer.Location = new System.Drawing.Point(12, 12);
             this.RSSViewer.Name = "RSSViewer";
-            this.RSSViewer.Size = new System.Drawing.Size(810, 295);
+            this.RSSViewer.ReadOnly = true;
+            this.RSSViewer.RowHeadersVisible = false;
+            this.RSSViewer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.RSSViewer.ShowCellErrors = false;
+            this.RSSViewer.ShowCellToolTips = false;
+            this.RSSViewer.ShowEditingIcon = false;
+            this.RSSViewer.ShowRowErrors = false;
+            this.RSSViewer.Size = new System.Drawing.Size(1037, 454);
             this.RSSViewer.TabIndex = 25;
+            this.RSSViewer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RSSViewer_CellClick);
             // 
             // OSL
             // 
