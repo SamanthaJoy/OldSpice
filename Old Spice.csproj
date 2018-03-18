@@ -145,6 +145,7 @@
   <ItemGroup>
     <Content Include="DUNE2000.ico" />
     <Content Include="Resources\bg.png" />
+    <EmbeddedResource Include="Resources\DroidSans.ttf" />
     <None Include="Resources\gruntlord.png" />
     <None Include="Resources\urabe.jpg" />
   </ItemGroup>
