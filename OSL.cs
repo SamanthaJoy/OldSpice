@@ -23,7 +23,11 @@ namespace OldSpice
         }
 
         Stopwatch watch = new Stopwatch();
+
         WebClient webClient = new WebClient();
+
+        public String procArch;
+
         public void ProcessStart(string fileName)
         {
             ProcessStart(fileName, null);
@@ -43,60 +47,11 @@ namespace OldSpice
             }
             Process.Start(psi);
         }
-        public String procArch;
+
         private void OSL_Load(object sender, EventArgs e)
         {
-            string url = "https://gruntmods.com/category/dune-2000-gruntmods-edition/duneupdates/feed/";
-            using (XmlReader reader = XmlReader.Create(url))
-            {
-                SyndicationFeed feed = SyndicationFeed.Load(reader);
-
-                RSSViewer.ColumnCount = 2;
-
-                RSSViewer.Columns[1].Visible = false;
-
-                DataGridViewColumn column1 = RSSViewer.Columns[0];
-                column1.Width = RSSViewer.Width - 20;
-
-                //DataGridViewColumn column2 = RSSViewer.Columns[1];
-                //column2.Width = 750;
-
-                Console.WriteLine(feed.Title.Text);
-                Console.WriteLine(feed.Links[0].Uri);
-                foreach (SyndicationItem item in feed.Items)
-                {
-                    //RSSViewer.Rows.Add(item.Title.Text, item.Summary.Text);
-                    RSSViewer.Rows.Add(item.Title.Text, item.Links[0].Uri);
-                    RSSViewer.Rows.Add(item.Summary.Text, item.Links[0].Uri);
-                    RSSViewer.Rows.Add("");
-                }
-                RSSViewer.Rows[0].Selected = false;
-            }
-
-            procArch = System.Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE");
-            //Grabs version of local installation
-            string localVersionString = getRegistryValue("DisplayVersion");
-            //Pretty much some shit in case they dont have the game installed
-            if (localVersionString == null)
-            {
-                localVersion.Text = "Not Detected";
-                button1.Enabled = false;
-                button1.Text = "Game not installed";
-                button2.Enabled = false;
-                button2.Text = "Game not installed";
-                button3.Enabled = false;
-                button3.Text = "Game not installed";
-                button4.Enabled = false;
-                button4.Text = "Game not installed";
-                button5.Enabled = false;
-                button5.Text = "Game not installed";
-                MessageBox.Show("The game is not installed correctly, please reinstall it. If you need technical support, visit https://gruntmods.com/contact-us/");
-            }
-            else
-            {
-                //Self-explanatory
-                localVersion.Text = localVersionString;
-            }
+            getNewsFeed();
+            getVersion();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -166,8 +121,8 @@ namespace OldSpice
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            About abert = new About();
-            abert.Show();
+            About about = new About();
+            about.Show();
         }
 
         public string getRegistryValue(string value)
@@ -200,7 +155,7 @@ namespace OldSpice
                     MessageBox.Show("The update program is already running!\r Please close it before continuing", "Update already running");
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("The update program was unable to run.\rPlease contact support.\rhttps://gruntmods.com/contact-us/");
                 size.Visible = false;
@@ -305,6 +260,67 @@ namespace OldSpice
             var rssurl = RSSViewer.CurrentRow.Cells[1].Value.ToString();
             var launchRSSUrl = new ProcessStartInfo("explorer.exe", rssurl);
             Process.Start(launchRSSUrl);
+        }
+
+        private void getNewsFeed()
+        {
+            string url = "https://gruntmods.com/category/dune-2000-gruntmods-edition/duneupdates/feed/";
+
+            try
+            {
+                using (XmlReader reader = XmlReader.Create(url))
+                {
+                    SyndicationFeed feed = SyndicationFeed.Load(reader);
+
+                    RSSViewer.ColumnCount = 2;
+
+                    RSSViewer.Columns[1].Visible = false;
+
+                    DataGridViewColumn column1 = RSSViewer.Columns[0];
+                    column1.Width = RSSViewer.Width - 20;
+
+                    foreach (SyndicationItem item in feed.Items)
+                    {
+                        //RSSViewer.Rows.Add(item.Title.Text, item.Summary.Text);
+                        RSSViewer.Rows.Add(item.Title.Text, item.Links[0].Uri);
+                        RSSViewer.Rows.Add(item.Summary.Text, item.Links[0].Uri);
+                        RSSViewer.Rows.Add("");
+                    }
+                    RSSViewer.Rows[0].Selected = false;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Unable to fetch newsfeed.\r\nServer may be down. If not, please check your connection settings.");
+            }
+        }
+
+        private void getVersion()
+        {
+            procArch = System.Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE");
+            //Grabs version of local installation
+            string localVersionString = getRegistryValue("DisplayVersion");
+            //Pretty much some shit in case they dont have the game installed
+            if (localVersionString == null)
+            {
+                localVersion.Text = "Not Detected";
+                button1.Enabled = false;
+                button1.Text = "Game not installed";
+                button2.Enabled = false;
+                button2.Text = "Game not installed";
+                button3.Enabled = false;
+                button3.Text = "Game not installed";
+                button4.Enabled = false;
+                button4.Text = "Game not installed";
+                button5.Enabled = false;
+                button5.Text = "Game not installed";
+                MessageBox.Show("The game is not installed correctly, please reinstall it. If you need technical support, visit https://gruntmods.com/contact-us/");
+            }
+            else
+            {
+                //Self-explanatory
+                localVersion.Text = localVersionString;
+            }
         }
     }
 }
